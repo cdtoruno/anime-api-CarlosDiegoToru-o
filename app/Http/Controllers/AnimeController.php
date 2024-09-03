@@ -13,7 +13,7 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $animes = Anime::all();
+        $animes = Anime::orderBy('titulo', 'asc')->get();
         return response()->json(['status' => 'success', 'data' => $animes]);
     }
 
